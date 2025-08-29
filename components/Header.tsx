@@ -6,7 +6,7 @@ interface HeaderProps {
 
 const Header = ({ onRegisterClick }: HeaderProps) => {
     return (
-        <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-28 md:pt-32">
+        <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
             {/* Background Grid + Radial Glow */}
             <div className="absolute inset-0 w-full h-full bg-zinc-900 
                 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
