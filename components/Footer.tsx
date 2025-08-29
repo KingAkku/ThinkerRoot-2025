@@ -32,28 +32,60 @@ const Footer = () => {
         },
     ];
 
+     const quickLinks = [
+        { href: '#vision', label: 'Vision' },
+        { href: '#themes', label: 'Themes' },
+        { href: '#special', label: 'Features' },
+    ];
+
     return (
-        <footer className="border-t border-zinc-800 mt-20 py-8 px-4">
-            <div className="max-w-7xl mx-auto text-center text-zinc-400">
-                <p className="font-display text-lg mb-2 text-zinc-200">ThinkerRoot Ideathon 2025</p>
-                <p>&copy; {new Date().getFullYear()} ThinkerRoot. All rights reserved.</p>
-                
-                <div className="flex justify-center space-x-6 my-6">
-                    {socialLinks.map(link => (
-                         <a 
-                            key={link.name}
-                            href={link.href} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-zinc-400 hover:text-red-500 transform hover:-translate-y-1 transition-all duration-300"
-                            aria-label={link.name}
-                        >
-                           {link.icon}
+        <footer className="relative border-t border-zinc-800 mt-20 pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+             <div className="absolute inset-0 w-full h-full bg-zinc-900 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+             <div className="relative max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Column 1: Branding */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                         <a href="#" className="font-display text-2xl font-bold text-white">
+                            Thinker<span className="text-red-500">Root</span>
                         </a>
-                    ))}
+                        <p className="mt-2 text-zinc-400 text-sm max-w-xs">Nurturing Core Innovation for a Better Tomorrow.</p>
+                    </div>
+
+                    {/* Column 2: Quick Links */}
+                    <div className="text-center">
+                        <h3 className="font-display text-lg font-semibold text-zinc-200 tracking-wider">Quick Links</h3>
+                        <ul className="mt-4 space-y-2">
+                           {quickLinks.map(link => (
+                                <li key={link.href}>
+                                    <a href={link.href} className="text-zinc-400 hover:text-red-500 transition-colors duration-300">{link.label}</a>
+                                </li>
+                           ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Social Links */}
+                    <div className="text-center md:text-right">
+                         <h3 className="font-display text-lg font-semibold text-zinc-200 tracking-wider">Connect With Us</h3>
+                         <div className="flex justify-center md:justify-end space-x-6 mt-4">
+                            {socialLinks.map(link => (
+                                <a 
+                                    key={link.name}
+                                    href={link.href} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-zinc-400 hover:text-red-500 transform hover:-translate-y-1 transition-all duration-300"
+                                    aria-label={link.name}
+                                >
+                                {link.icon}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                <p className="text-sm">Nurturing Core Innovation for a Better Tomorrow.</p>
+                <div className="mt-12 border-t border-zinc-800 pt-8 text-center text-zinc-500 text-sm">
+                    <p>&copy; {new Date().getFullYear()} ThinkerRoot Ideathon. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );

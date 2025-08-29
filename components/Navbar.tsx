@@ -22,7 +22,7 @@ const Navbar = ({ onRegisterClick }: NavbarProps) => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-zinc-900/80 backdrop-blur-sm border-b border-zinc-800' : 'bg-transparent'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled ? 'bg-zinc-900/80 backdrop-blur-sm border-zinc-800' : 'bg-transparent border-transparent'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <a href="#" className="font-display text-2xl font-bold text-white">
