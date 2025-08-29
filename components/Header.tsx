@@ -4,6 +4,13 @@ interface HeaderProps {
     onRegisterClick: () => void;
 }
 
+const ThinkerRootLogo = () => (
+    <div className="w-12 h-12 rounded bg-zinc-800/50 flex items-center justify-center ring-1 ring-zinc-700 transition-transform duration-300 hover:scale-110">
+        <span className="text-3xl" role="img" aria-label="ThinkerRoot Logo">🧠</span>
+    </div>
+);
+
+
 const Header = ({ onRegisterClick }: HeaderProps) => {
     return (
         <header className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
@@ -29,13 +36,20 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                 </div>
             </div>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-                <p className="text-base text-zinc-400 tracking-wide">Powered by Lenient Tree</p>
-                <img 
-                    src="https://drive.google.com/uc?export=view&id=1G-cjym37In0Mq197JJi2DO_s0Dft_bz7" 
-                    alt="Lenient Tree Logo" 
-                    className="w-12 h-12 rounded mt-1" 
-                />
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
+                <p className="text-base text-zinc-400 tracking-wide">Powered by</p>
+                <div className="flex items-center gap-6">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Lenient Tree">
+                        <img 
+                            src="https://drive.google.com/uc?export=view&id=1G-cjym37In0Mq197JJi2DO_s0Dft_bz7" 
+                            alt="Lenient Tree Logo" 
+                            className="w-12 h-12 rounded transition-transform duration-300 hover:scale-110" 
+                        />
+                    </a>
+                     <a href="#" aria-label="ThinkerRoot Official Logo">
+                        <ThinkerRootLogo />
+                    </a>
+                </div>
             </div>
         </header>
     );
