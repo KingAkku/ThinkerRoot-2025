@@ -24,6 +24,9 @@ const RegistrationModal = ({ isOpen, onClose }: RegistrationModalProps) => {
         <div 
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
             onClick={onClose}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
         >
             <div 
                 className="bg-zinc-800 rounded-lg shadow-2xl shadow-red-900/20 w-full max-w-2xl border border-zinc-700 relative max-h-[90vh] overflow-y-auto"
@@ -37,7 +40,7 @@ const RegistrationModal = ({ isOpen, onClose }: RegistrationModalProps) => {
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
-                    <h2 className="font-display text-3xl font-bold text-red-400 text-center">Register Your Interest</h2>
+                    <h2 id="modal-title" className="font-display text-3xl font-bold text-red-400 text-center">Register Your Interest</h2>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8 p-8 pt-0">

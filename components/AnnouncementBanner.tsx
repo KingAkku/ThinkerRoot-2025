@@ -33,6 +33,10 @@ const AnnouncementBanner = () => {
 
     const isEventStarted = !timeLeft.days && !timeLeft.hours && !timeLeft.minutes && !timeLeft.seconds;
 
+    const Separator = () => (
+        <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+    );
+
     return (
         <div className="fixed top-20 left-0 right-0 z-40 bg-zinc-900/60 backdrop-blur-sm shadow-[0_4px_20px_-5px_rgba(239,68,68,0.3)] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +44,7 @@ const AnnouncementBanner = () => {
                     <div className="animate-pulse-slow text-zinc-200 flex items-center gap-x-3 md:gap-x-4 flex-wrap justify-center">
                         <span className="font-semibold">🗓️ Oct 24-26, 2025</span>
                         
-                        <span className="hidden sm:inline-block text-zinc-600">|</span>
+                        <div className="hidden sm:flex items-center"><Separator /></div>
 
                         <div className="font-mono tracking-wider flex items-baseline gap-x-2">
                              <span className="text-zinc-400">Time Left:</span>
@@ -56,7 +60,7 @@ const AnnouncementBanner = () => {
                             )}
                         </div>
                         
-                        <span className="hidden lg:inline-block text-zinc-600">|</span>
+                        <div className="hidden lg:flex items-center"><Separator /></div>
                         
                         <span className="hidden lg:inline-block">6 Groundbreaking Themes & Expert Features</span>
                     </div>
