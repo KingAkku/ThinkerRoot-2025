@@ -33,19 +33,19 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 
             <div className="flex-shrink-0 relative z-10 flex flex-col items-center gap-4 pb-6">
                 <p className="text-base text-zinc-400 tracking-wide">Powered by</p>
-                <div className="flex items-end gap-8">
+                <div className="flex items-center gap-12">
                     <a href="/" target="lenienttree.com" rel="noopener noreferrer" aria-label="Lenient Tree">
                         <img 
                             src="/lt.svg"
                             alt="Lenient Tree Logo" 
-                            className="h-40 w-auto transition-transform duration-300 hover:scale-110" 
+                            className="h-24 w-auto transition-transform duration-300 hover:scale-110" 
                         />
                     </a>
                     <a href="#" aria-label="ThinkerRoot Official Logo">
                         <img 
                             src="/thinkerroot.svg"
                             alt="ThinkerRoot Official Logo" 
-                            className="h-12 w-auto transition-transform duration-300 hover:scale-110" 
+                            className="h-16 w-auto transition-transform duration-300 hover:scale-110" 
                         />
                     </a>
                 </div>
