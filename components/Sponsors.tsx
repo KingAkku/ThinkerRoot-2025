@@ -9,7 +9,7 @@ const Sponsors = () => {
                 <p className="text-center text-zinc-400 mb-12">
                     This event is made possible by the generous support of our sponsors.
                 </p>
-                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
                     {SPONSORS.map((sponsor) => (
                         <a 
                             key={sponsor.name}
