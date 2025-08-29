@@ -8,10 +8,19 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import RegistrationModal from './components/RegistrationModal';
 import AnnouncementBanner from './components/AnnouncementBanner';
+import EventDetails from './components/EventDetails';
+import Sponsors from './components/Sponsors';
+import SuccessToast from './components/SuccessToast';
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showSuccessToast, setShowSuccessToast] = useState(false);
+
+    const handleRegisterSuccess = () => {
+        setIsModalOpen(false);
+        setShowSuccessToast(true);
+    };
 
     return (
         <div className="bg-zinc-900 text-zinc-200 font-sans leading-relaxed overflow-x-hidden">
@@ -20,11 +29,19 @@ const App = () => {
             <RegistrationModal 
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
+                onSuccess={handleRegisterSuccess}
+            />
+            <SuccessToast 
+                isVisible={showSuccessToast}
+                onDismiss={() => setShowSuccessToast(false)}
             />
             <div className="relative z-10">
                 <Header onRegisterClick={() => setIsModalOpen(true)} />
 
                 <main>
+                    <EventDetails />
+                    <Sponsors />
+
                     <Section id="vision" title="Our Vision">
                         <div className="grid md:grid-cols-3 gap-8">
                             {VISION_POINTS.map((point) => (

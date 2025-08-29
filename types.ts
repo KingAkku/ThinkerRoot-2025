@@ -1,4 +1,3 @@
-
 import type React from 'react';
 
 export interface Theme {
@@ -16,4 +15,10 @@ export interface SpecialFeature {
 export interface VisionPoint {
     title: string;
     description: string;
+}
+
+export interface Sponsor {
+    name: string;
+    logo: React.ReactNode;
+    href: string;
 }

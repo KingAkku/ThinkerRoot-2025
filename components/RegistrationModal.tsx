@@ -4,16 +4,17 @@ import { HACKATHON_THEMES } from '../constants';
 interface RegistrationModalProps {
     isOpen: boolean;
     onClose: () => void;
+    onSuccess: () => void;
 }
 
-const RegistrationModal = ({ isOpen, onClose }: RegistrationModalProps) => {
+const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProps) => {
     if (!isOpen) return null;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // Handle form submission logic here
         console.log('Form submitted');
-        onClose(); // Close modal after submission
+        onSuccess(); // Trigger success action
     };
 
     const inputClasses = "w-full bg-zinc-700 border border-zinc-600 rounded-md px-3 py-2 text-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors";
