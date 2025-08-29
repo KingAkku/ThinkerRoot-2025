@@ -14,8 +14,9 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                 bg-[size:14px_24px] 
                 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]">
             </div>
+            <div className="relative z-10 space-y-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.15),_transparent_40%)]"></div>
-
+            
             {/* Hero Section */}
             <div className="flex-grow flex items-center justify-center">
                 <div className="relative z-10 space-y-8">
