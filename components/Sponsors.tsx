@@ -17,7 +17,7 @@ const Sponsors = () => {
                                 href={sponsor.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
+                                className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110 p-2 border-2 border-transparent hover:border-zinc-600 rounded-xl"
                                 aria-label={`Visit sponsor: ${sponsor.name}`}
                             >
                                {sponsor.logo}

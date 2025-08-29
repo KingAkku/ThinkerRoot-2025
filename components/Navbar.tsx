@@ -72,26 +72,26 @@ const Navbar = ({ onRegisterClick }: NavbarProps) => {
             </nav>
 
             {/* Mobile Pill Navigation */}
-            <nav className="md:hidden fixed bottom-4 inset-x-0 z-50 px-10">
-                 <div className="flex items-center justify-around w-full gap-x-2 bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-full shadow-lg shadow-black/30 p-2">
+            <nav className="md:hidden fixed bottom-4 inset-x-0 z-50 px-5">
+                 <div className="flex items-center justify-around w-full gap-x-2 bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-full shadow-lg shadow-black/30 p-3">
                     {mobileNavLinks.map(link => (
                          <a 
                             key={link.href}
                             href={link.href} 
-                            className="flex flex-col items-center justify-center text-zinc-400 hover:text-red-400 w-20 h-12 rounded-full transition-colors duration-300"
+                            className="flex flex-col items-center justify-center text-zinc-400 hover:text-red-400 w-20 h-14 rounded-full transition-colors duration-300"
                             aria-label={link.label}
                         >
-                            <div className="w-6 h-6">{link.icon}</div>
-                            <span className="text-xs mt-1">{link.label}</span>
+                            <div className="w-7 h-7">{link.icon}</div>
+                            <span className="text-xs mt-2">{link.label}</span>
                          </a>
                     ))}
                      <button 
                         onClick={onRegisterClick}
-                        className="flex flex-col items-center justify-center text-zinc-400 bg-red-600/20 hover:text-white hover:bg-red-600 w-20 h-12 rounded-full transition-all duration-300"
+                        className="flex flex-col items-center justify-center text-zinc-400 bg-red-600/20 hover:text-white hover:bg-red-600 w-20 h-14 rounded-full transition-all duration-300"
                         aria-label="Register"
                     >
-                        <div className="w-6 h-6"><RegisterIcon /></div>
-                        <span className="text-xs mt-1">Register</span>
+                        <div className="w-7 h-7"><RegisterIcon /></div>
+                        <span className="text-xs mt-2">Register</span>
                     </button>
                 </div>
             </nav>
