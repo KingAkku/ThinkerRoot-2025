@@ -36,7 +36,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                 </div>
             </div>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center justify-center gap-3">
                 <p className="text-base text-zinc-400 tracking-wide">Powered by</p>
                 <div className="flex items-center gap-6">
                     <a href="/" target="lenienttree.com" rel="noopener noreferrer" aria-label="Lenient Tree">
