@@ -28,6 +28,15 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                     </button>
                 </div>
             </div>
+
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+                <p className="text-sm text-zinc-500 tracking-wide">Powered by Lenient Tree</p>
+                <img 
+                    src="https://drive.google.com/uc?export=view&id=1NmzlNJ2RiGWa_g5-GOxyECzEmZzMdH9S" 
+                    alt="Lenient Tree Logo" 
+                    className="w-10 h-10 rounded" 
+                />
+            </div>
         </header>
     );
 };
