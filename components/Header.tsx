@@ -18,7 +18,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 
             {/* Hero Section */}
             <div className="flex-grow flex items-center justify-center">
-                <div className="relative z-10 space-y-10">
+                <div className="relative z-15 space-y-20">
                     <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter animate-gradient-text bg-gradient-to-r from-red-500 via-red-400 to-orange-400 bg-clip-text text-transparent">
                         ThinkerRoot Ideathon 2025
                     </h1>
