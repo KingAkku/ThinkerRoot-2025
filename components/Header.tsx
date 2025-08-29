@@ -46,7 +46,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                             className="h-12 w-auto transition-transform duration-300 hover:scale-110" 
                         />
                     </a>
-                     <a href="/" aria-label="ThinkerRoot Official Logo">
+                    <a href="#" aria-label="ThinkerRoot Official Logo">
                         <img 
                             src="/thinkerroot.svg"
                             alt="ThinkerRoot Official Logo" 
