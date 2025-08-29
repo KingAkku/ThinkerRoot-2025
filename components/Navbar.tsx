@@ -72,7 +72,7 @@ const Navbar = ({ onRegisterClick }: NavbarProps) => {
             </nav>
 
             {/* Mobile Pill Navigation */}
-            <nav className="md:hidden fixed bottom-4 inset-x-0 z-50 px-5">
+            <nav className="md:hidden fixed bottom-4 inset-x-0 z-50 px-10">
                  <div className="flex items-center justify-around w-full gap-x-2 bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-full shadow-lg shadow-black/30 p-2">
                     {mobileNavLinks.map(link => (
                          <a 
