@@ -38,7 +38,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                         <img 
                             src="/lt.svg"
                             alt="Lenient Tree Logo" 
-                            className="h-40 w-auto transition-transform duration-300 hover:scale-110" 
+                            className="h-60 w-auto transition-transform duration-300 hover:scale-110" 
                         />
                     </a>
                     <a href="#" aria-label="ThinkerRoot Official Logo">
