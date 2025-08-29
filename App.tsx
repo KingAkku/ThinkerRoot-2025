@@ -7,6 +7,7 @@ import VisionCard from './components/VisionCard';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import RegistrationModal from './components/RegistrationModal';
+import AnnouncementBanner from './components/AnnouncementBanner';
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     return (
         <div className="bg-zinc-900 text-zinc-200 font-sans leading-relaxed overflow-x-hidden">
             <Navbar onRegisterClick={() => setIsModalOpen(true)} />
+            <AnnouncementBanner />
             <RegistrationModal 
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
