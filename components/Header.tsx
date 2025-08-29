@@ -41,7 +41,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                 <div className="flex items-center gap-6">
                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Lenient Tree">
                         <img 
-                            src="https://drive.google.com/uc?export=view&id=1G-cjym37In0Mq197JJi2DO_s0Dft_bz7" 
+                            src="/logo/lenient-tree.png"
                             alt="Lenient Tree Logo" 
                             className="w-12 h-12 rounded transition-transform duration-300 hover:scale-110" 
                         />
