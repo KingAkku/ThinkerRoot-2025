@@ -7,10 +7,16 @@ interface HeaderProps {
 const Header = ({ onRegisterClick }: HeaderProps) => {
     return (
         <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-28 md:pt-32">
-            <div className="absolute inset-0 w-full h-full bg-zinc-900 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+            {/* Background Grid + Radial Glow */}
+            <div className="absolute inset-0 w-full h-full bg-zinc-900 
+                bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
+                linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
+                bg-[size:14px_24px] 
+                [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+            </div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.15),_transparent_40%)]"></div>
 
-
+            {/* Hero Section */}
             <div className="flex-grow flex items-center justify-center">
                 <div className="relative z-10 space-y-6">
                     <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter animate-gradient-text bg-gradient-to-r from-red-500 via-red-400 to-orange-400 bg-clip-text text-transparent">
@@ -32,7 +38,9 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                 </div>
             </div>
 
-            <div className="flex-shrink-0 relative z-10 flex flex-col items-center gap-4 pb-6">
+            {/* Powered By Section */}
+            <div className="flex-shrink-0 relative z-10 flex flex-col items-center gap-4 pb-10 mt-16">
+                {/* ↑ added mt-16 here for extra spacing */}
                 <p className="text-base text-zinc-400 tracking-wide">Powered by</p>
                 <div className="flex items-center gap-12">
                     <a href="#" aria-label="Lenient Tree">
