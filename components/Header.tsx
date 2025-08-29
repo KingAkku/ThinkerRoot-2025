@@ -30,11 +30,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
             </div>
 
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-                <p className="text-sm text-zinc-500 tracking-wide">Powered by Lenient Tree</p>
+                <p className="text-base text-zinc-400 tracking-wide">Powered by Lenient Tree</p>
                 <img 
-                    src="https://drive.google.com/uc?export=view&id=1NmzlNJ2RiGWa_g5-GOxyECzEmZzMdH9S" 
+                    src="https://drive.google.com/uc?export=view&id=1G-cjym37In0Mq197JJi2DO_s0Dft_bz7" 
                     alt="Lenient Tree Logo" 
-                    className="w-10 h-10 rounded" 
+                    className="w-12 h-12 rounded mt-1" 
                 />
             </div>
         </header>
