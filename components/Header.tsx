@@ -30,7 +30,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                     <div className="flex justify-center pt-4">
                         <button 
                             onClick={onRegisterClick}
-                            className="bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-8 rounded-md transition-all duration-600 transform hover:scale-105 shadow-lg shadow-red-500/20"
+                            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-500/20"
                         >
                             Register Now
                         </button>
