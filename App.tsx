@@ -11,6 +11,7 @@ import AnnouncementBanner from './components/AnnouncementBanner';
 import EventDetails from './components/EventDetails';
 import Sponsors from './components/Sponsors';
 import SuccessToast from './components/SuccessToast';
+import PoweredBy from './components/PoweredBy';
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
             />
             <div className="relative z-10">
                 <Header onRegisterClick={() => setIsModalOpen(true)} />
+                <PoweredBy />
 
                 <main>
                     <EventDetails />
