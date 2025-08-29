@@ -48,6 +48,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
                     </a>
                      <a href="#" aria-label="ThinkerRoot Official Logo">
                         <ThinkerRootLogo />
+                        <img 
+                            src="/ThinkerRoot.png"
+                            alt="Thinker Root Logo" 
+                            className="w-12 h-12 rounded transition-transform duration-300 hover:scale-110" 
+                        />
                     </a>
                 </div>
             </div>
