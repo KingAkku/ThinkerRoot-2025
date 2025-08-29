@@ -6,7 +6,7 @@ interface HeaderProps {
 
 const ThinkerRootLogo = () => (
     <div className="w-12 h-12 rounded bg-zinc-800/50 flex items-center justify-center ring-1 ring-zinc-700 transition-transform duration-300 hover:scale-110 p-2">
-        <img src="/logo/thinkerroot.svg" alt="ThinkerRoot Official Logo" className="w-full h-full" />
+        <img src="/logo/ThinkerRoot.png" alt="ThinkerRoot Official Logo" className="w-full h-full" />
     </div>
 );
 
