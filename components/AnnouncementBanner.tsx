@@ -38,7 +38,7 @@ const AnnouncementBanner = () => {
     );
 
     return (
-        <div className="fixed top-20 left-0 right-0 z-40 bg-zinc-900/60 backdrop-blur-sm shadow-[0_4px_20px_-5px_rgba(239,68,68,0.3)] overflow-hidden">
+        <div className="hidden md:block fixed top-20 left-0 right-0 z-40 bg-zinc-900/60 backdrop-blur-sm shadow-[0_4px_20px_-5px_rgba(239,68,68,0.3)] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-center h-12 text-sm text-center">
                     <div className="animate-pulse-slow text-zinc-200 flex items-center gap-x-3 md:gap-x-4 flex-wrap justify-center">
