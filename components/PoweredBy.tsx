@@ -8,7 +8,7 @@ const PoweredBy = () => {
                 <a 
                     href="#" 
                     aria-label="Lenient Tree"
-                    className="p-2 rounded-2xl"
+                    className="p-2 rounded-2xl transform transition-all duration-300 hover:scale-105"
                 >
                     <img 
                         src="/lt.svg"
@@ -19,7 +19,7 @@ const PoweredBy = () => {
                 <a 
                     href="#" 
                     aria-label="ThinkerRoot Official Logo"
-                    className="p-2 rounded-2xl"
+                    className="p-2 rounded-2xl transform transition-all duration-300 hover:scale-105"
                 >
                     <img 
                         src="/thinkerroot.svg"
