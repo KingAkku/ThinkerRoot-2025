@@ -32,6 +32,9 @@ const App = () => {
                     </Section>
 
                     <Section id="themes" title="6 Groundbreaking Themes">
+                        <p className="max-w-3xl mx-auto text-center text-zinc-300 mb-12 text-lg">
+                            Dive into one of our six future-forward themes. Each one is a launchpad for radical ideas, blending core science with frontier technology to challenge your creativity and push the boundaries of what's possible.
+                        </p>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {HACKATHON_THEMES.map((theme) => (
                                 <ThemeCard
