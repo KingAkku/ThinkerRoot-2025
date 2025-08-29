@@ -41,7 +41,18 @@ const TrophyIcon = () => (
 const PlaceholderLogo = ({ text }: { text: string }) => (
     <svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto text-zinc-500">
         <rect width="180" height="80" rx="10" fill="currentColor" fillOpacity="0.1"/>
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontFamily="Poppins, sans-serif" fontSize="16" fontWeight="600" fill="currentColor">
+        <text 
+            x="50%" 
+            y="50%" 
+            dominantBaseline="middle" 
+            textAnchor="middle" 
+            fontFamily="Poppins, sans-serif" 
+            fontSize="16" 
+            fontWeight="600" 
+            fill="currentColor"
+            stroke="#ef4444"
+            strokeWidth="0.5"
+        >
             {text}
         </text>
     </svg>
