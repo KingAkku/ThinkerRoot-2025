@@ -61,7 +61,7 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
 
           {/* LinkedIn Template Download Button */}
           <a
-            href="/Main Poster(1).png"
+            href="/poster.png"
             download
             className="mt-4 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
           >
