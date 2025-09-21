@@ -28,7 +28,6 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
   const firstPrize = registrationCount * 15;
   const secondPrize = registrationCount * 10;
   const thirdPrize = registrationCount * 5;
-  const mentorFund = registrationCount * 20;
 
   return (
     <header className="relative flex items-center justify-center text-center px-4 overflow-hidden min-h-screen pt-20 md:pt-32">
@@ -63,10 +62,10 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Live Prize Pool (based on {registrationCount} registrations)
+            Live Prize Pool 
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <PrizeCard
               label="1st Prize"
               amount={firstPrize}
@@ -84,12 +83,6 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
               amount={thirdPrize}
               colorFrom="from-yellow-300"
               colorTo="to-green-400"
-            />
-            <PrizeCard
-              label="Mentorship Fund"
-              amount={mentorFund}
-              colorFrom="from-purple-500"
-              colorTo="to-pink-500"
             />
           </div>
         </div>

@@ -1,18 +1,17 @@
 import React from 'react';
 
-interface CampusAmbassadorModalProps {
+interface VolunteerModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSuccess: () => void;
 }
 
-const CampusAmbassadorModal = ({ isOpen, onClose, onSuccess }: CampusAmbassadorModalProps) => {
+const VolunteerModal = ({ isOpen, onClose, onSuccess }: VolunteerModalProps) => {
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // handle submit logic here
-    console.log('Campus Ambassador Form submitted');
+    console.log('Volunteer Form submitted');
     onSuccess();
   };
 
@@ -36,12 +35,15 @@ const CampusAmbassadorModal = ({ isOpen, onClose, onSuccess }: CampusAmbassadorM
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
-            aria-label="Close campus ambassador form"
+            aria-label="Close volunteer form"
           >
             ✕
           </button>
-          <h2 id="modal-title" className="font-display text-2xl font-bold text-red-400 text-center">
-            Apply for Campus Ambassador
+          <h2
+            id="modal-title"
+            className="font-display text-2xl font-bold text-red-400 text-center"
+          >
+            Apply to be a Volunteer
           </h2>
         </div>
 
@@ -55,7 +57,7 @@ const CampusAmbassadorModal = ({ isOpen, onClose, onSuccess }: CampusAmbassadorM
 
           <div>
             <label htmlFor="college" className={labelClasses}>
-              College Name *
+              College/Organization *
             </label>
             <input type="text" id="college" name="college" required className={inputClasses} />
           </div>
@@ -85,7 +87,7 @@ const CampusAmbassadorModal = ({ isOpen, onClose, onSuccess }: CampusAmbassadorM
             type="submit"
             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105"
           >
-            Apply Now
+            Become a Volunteer
           </button>
         </form>
       </div>
@@ -93,4 +95,4 @@ const CampusAmbassadorModal = ({ isOpen, onClose, onSuccess }: CampusAmbassadorM
   );
 };
 
-export default CampusAmbassadorModal;
+export default VolunteerModal;

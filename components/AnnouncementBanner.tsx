@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const AnnouncementBanner = () => {
     const calculateTimeLeft = () => {
-        const difference = +new Date('2025-10-04T09:00:00') - +new Date();
+        const difference = +new Date('2025-12-26T09:00:00') - +new Date();
         let timeLeft = {
             days: 0,
             hours: 0,
@@ -42,7 +42,7 @@ const AnnouncementBanner = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-center h-12 text-sm text-center">
                     <div className="animate-pulse-slow text-zinc-200 flex items-center gap-x-3 md:gap-x-4 flex-wrap justify-center">
-                        <span className="font-semibold">🗓️ Oct 4-6, 2025</span>
+                        <span className="font-semibold">🗓️ Dec 26, 2025</span>
                         
                         <div className="hidden sm:flex items-center"><Separator /></div>
 
@@ -62,7 +62,7 @@ const AnnouncementBanner = () => {
                         
                         <div className="hidden lg:flex items-center"><Separator /></div>
                         
-                        <span className="hidden lg:inline-block">6 Groundbreaking Themes & Expert Features</span>
+                        <span className="hidden lg:inline-block">7 Groundbreaking Themes , Expert Features & others</span>
                     </div>
                 </div>
             </div>
