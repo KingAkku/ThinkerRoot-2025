@@ -8,7 +8,7 @@ const ClockIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" heigh
 const DetailCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
     <div className="bg-zinc-800/50 p-6 rounded-lg border border-zinc-700 backdrop-blur-sm text-center transition-all duration-300 hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1">
         <div className="flex justify-center mb-4">
-            <div className="bg-red-500/10 text-red-400 rounded-full p-14 w-14 h-14 flex items-center justify-center">
+            <div className="bg-red-500/10 text-red-400 rounded-full w-14 h-14 flex items-center justify-center">
                 <div className="w-8 h-8">{icon}</div>
             </div>
         </div>
