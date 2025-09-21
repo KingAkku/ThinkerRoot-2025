@@ -62,7 +62,7 @@ const AnnouncementBanner = () => {
                         
                         <div className="hidden lg:flex items-center"><Separator /></div>
                         
-                        <span className="hidden lg:inline-block">7 Groundbreaking Themes , Expert Features & others</span>
+                        <span className="hidden lg:inline-block">7 Groundbreaking Themes , Expert Features & Open Innovation</span>
                     </div>
                 </div>
             </div>
