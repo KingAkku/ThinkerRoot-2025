@@ -80,20 +80,23 @@ const App = () => {
             </Section>
 
             <Section id="themes" title="6 Groundbreaking Themes">
-              <p className="max-w-3xl mx-auto text-center text-zinc-300 mb-12 text-lg">
-                Dive into one of our six future-forward themes. Each one is a launchpad for radical
-                ideas, blending core science with frontier technology to challenge your creativity
-                and push the boundaries of what's possible.
+              <p className="max-w-4xl mx-auto text-center text-zinc-300 mb-14 text-xl md:text-2xl font-medium">
+              Dive into one of our six future-forward themes. Each one is a launchpad for radical
+              ideas, blending core science with frontier technology to challenge your creativity
+              and push the boundaries of what's possible.
               </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {HACKATHON_THEMES.map((theme) => (
-                  <ThemeCard
-                    key={theme.title}
-                    icon={theme.icon}
-                    title={theme.title}
-                    description={theme.description}
-                  />
-                ))}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {HACKATHON_THEMES.map((theme) => (
+                <ThemeCard
+                key={theme.title}
+                icon={theme.icon}
+                title={theme.title}
+                description={theme.description}
+                />
+              ))}
+              </div>
+              <div className="mt-8 text-center text-lg md:text-xl font-semibold text-rose-400">
+              (Open Innovation Track also available)
               </div>
             </Section>
 
