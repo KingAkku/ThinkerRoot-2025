@@ -1,50 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/tr.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThinkerRoot Ideathon 2025</title>
+    <meta
+      name="description"
+      content="ThinkerRoot Ideathon 2025, a one-of-a-kind Ideathon designed to nurture core innovation by empowering developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes."
+    />
+    <meta name="theme-color" content="#27272a" />
+    <link rel="apple-touch-icon" href="/tr.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="keywords"
+      content="ThinkerRoot Ideathon 2025, Ideathon, innovation, developers, thinkers, creators, technology"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ThinkerRoot Ideathon 2025" />
+    <meta
+      property="og:description"
+      content="ThinkerRoot Ideathon 2025, a one-of-a-kind Ideathon designed to nurture core innovation by empowering developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes."
+    />
+    <meta
+      property="og:image"
+      content="https://thinker-root-2025.vercel.app/poster.png"
+    />
+    <meta property="og:url" content="https://thinker-root-2025.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ThinkerRoot Ideathon 2025" />
+    <meta
+      name="twitter:description"
+      content="ThinkerRoot Ideathon 2025, a one-of-a-kind Ideathon designed to nurture core innovation by empowering developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes."
+    />
+    <meta
+      name="twitter:image"
+      content="https://thinker-root-2025.vercel.app/poster.png"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-              display: ['Orbitron', 'sans-serif'],
+              sans: ["Poppins", "sans-serif"],
+              display: ["Orbitron", "sans-serif"],
             },
             animation: {
-              'gradient-bg': 'gradient-bg 15s ease infinite',
-              'gradient-text': 'gradient-text 5s ease infinite',
-              'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              "gradient-bg": "gradient-bg 15s ease infinite",
+              "gradient-text": "gradient-text 5s ease infinite",
+              "pulse-slow":
+                "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
             },
             keyframes: {
-              'gradient-bg': {
-                '0%, 100%': { backgroundPosition: '0% 50%' },
-                '50%': { backgroundPosition: '100% 50%' },
+              "gradient-bg": {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
               },
-              'gradient-text': {
-                 '0%, 100%': {
-                    'background-size':'200% 200%',
-                    'background-position': 'left center'
-                  },
-                  '50%': {
-                    'background-size':'200% 200%',
-                    'background-position': 'right center'
-                  }
+              "gradient-text": {
+                "0%, 100%": {
+                  "background-size": "200% 200%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
               },
-              'pulse-slow': {
-                '0%, 100%': { opacity: 1 },
-                '50%': { opacity: 0.85 },
+              "pulse-slow": {
+                "0%, 100%": { opacity: 1 },
+                "50%": { opacity: 0.85 },
               },
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      };
     </script>
     <style>
       html {
@@ -63,19 +104,19 @@
         color: #ffffff;
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@18.2.0",
-    "react/": "https://aistudiocdn.com/react@18.2.0/",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@18.2.0/client",
-    "react-dom/": "https://aistudiocdn.com/react-dom@18.2.0/"
-  }
-}
-</script>
-</head>
-<body>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@18.2.0",
+          "react/": "https://aistudiocdn.com/react@18.2.0/",
+          "react-dom/client": "https://aistudiocdn.com/react-dom@18.2.0/client",
+          "react-dom/": "https://aistudiocdn.com/react-dom@18.2.0/"
+        }
+      }
+    </script>
+  </head>
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
