@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCampusClick }) => {
             onClick={onCampusClick}
             className="bg-zinc-700 hover:bg-zinc-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105"
           >
-            Campus Ambassador
+            Volunteer
           </button>
           <button
             onClick={onRegisterClick}

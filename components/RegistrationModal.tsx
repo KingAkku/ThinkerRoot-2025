@@ -11,14 +11,14 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
   if (!isOpen) return null;
 
   const [paymentProof, setPaymentProof] = useState<File | null>(null);
-  const [shareProof, setShareProof] = useState<File | null>(null);
+  const [linkedinLink, setLinkedinLink] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // ✅ check for uploads
-    if (!paymentProof || !shareProof) {
-      alert("Please upload all mandatory files");
+    if (!paymentProof || !linkedinLink) {
+      alert("Please upload all mandatory details");
       return;
     }
 
@@ -59,13 +59,13 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
             Register Your Interest
           </h2>
 
-          {/* PDF Download Button */}
+          {/* LinkedIn Template Download Button */}
           <a
-            href="public/Thinkerroot.pdf"
+            href="/Main Poster(1).png"
             download
             className="mt-4 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
           >
-            📄 Download ThinkerRoot PDF
+            📥 Download LinkedIn Post Template
           </a>
         </div>
 
@@ -189,9 +189,9 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
             </div>
           </fieldset>
 
-          {/* Social Share Proof */}
+          {/* Social Media Link */}
           <fieldset>
-            <legend className={legendClasses}>Social Media Share Proof *</legend>
+            <legend className={legendClasses}>Social Media Link *</legend>
             <div className="space-y-4 mt-4">
               <div>
                 <label htmlFor="linkedinLink" className={labelClasses}>
@@ -202,21 +202,10 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
                   id="linkedinLink"
                   name="linkedinLink"
                   required
+                  value={linkedinLink}
+                  onChange={(e) => setLinkedinLink(e.target.value)}
                   className={inputClasses}
                   placeholder="Paste your LinkedIn post URL"
-                />
-              </div>
-              <div>
-                <label htmlFor="shareScreenshot" className={labelClasses}>
-                  Upload Screenshot of your LinkedIn Post *
-                </label>
-                <input
-                  type="file"
-                  id="shareScreenshot"
-                  accept="image/*"
-                  required
-                  onChange={(e) => setShareProof(e.target.files?.[0] ?? null)}
-                  className="text-zinc-300"
                 />
               </div>
             </div>
@@ -224,8 +213,20 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
 
           {/* Payment Proof */}
           <fieldset>
-            <legend className={legendClasses}>Payment Screenshot *</legend>
-            <div className="mt-4">
+            <legend className={legendClasses}>Payment *</legend>
+            <div className="mt-4 space-y-4">
+              {/* QR Code */}
+              <div className="flex flex-col items-center space-y-2">
+                <img
+                  src="/payment.jpeg"
+                  alt="Payment QR Code"
+                  className="w-48 h-48 object-contain rounded-md"
+                />
+                <p className="text-zinc-400 text-xs text-center max-w-xs">
+                  Scan the QR code above to make your payment (₹50). Upload the payment screenshot below.
+                </p>
+              </div>
+
               <label htmlFor="paymentScreenshot" className={labelClasses}>
                 Upload Payment Screenshot *
               </label>
@@ -237,6 +238,10 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
                 onChange={(e) => setPaymentProof(e.target.files?.[0] ?? null)}
                 className="text-zinc-300"
               />
+
+              <p className="text-red-400 text-xs mt-2">
+                ⚠️ Any fraudulent or irrelevant activities will result in a permanent ban from ThinkerRoot 2025.
+              </p>
             </div>
           </fieldset>
 

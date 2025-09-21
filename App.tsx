@@ -14,13 +14,13 @@ import SuccessToast from './components/SuccessToast';
 import PoweredBy from './components/PoweredBy';
 import ClickSpark from './components/ClickSpark';
 import ParticlesBackground from './components/ParticlesBackground';
-import CampusAmbassadorModal from './components/CampusAmbassadorModal'; // new import
+import VolunteerModal from './components/VolunteerModal'; // ✅ your new modal
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
-  const [isCampusModalOpen, setIsCampusModalOpen] = useState(false); // new state
+  const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false); // ✅ renamed
 
   const handleRegisterSuccess = () => {
     setIsModalOpen(false);
@@ -34,7 +34,7 @@ const App = () => {
 
         <Navbar
           onRegisterClick={() => setIsModalOpen(true)}
-          onCampusClick={() => setIsCampusModalOpen(true)}
+          onCampusClick={() => setIsVolunteerModalOpen(true)} // ✅ opens volunteer modal now
         />
         <AnnouncementBanner />
 
@@ -44,11 +44,12 @@ const App = () => {
           onSuccess={handleRegisterSuccess}
         />
 
-        <CampusAmbassadorModal
-          isOpen={isCampusModalOpen}
-          onClose={() => setIsCampusModalOpen(false)}
+        
+        <VolunteerModal
+          isOpen={isVolunteerModalOpen}
+          onClose={() => setIsVolunteerModalOpen(false)}
           onSuccess={() => {
-            setIsCampusModalOpen(false);
+            setIsVolunteerModalOpen(false);
             setShowSuccessToast(true);
           }}
         />
