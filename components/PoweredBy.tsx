@@ -10,27 +10,23 @@ const PoweredBy = () => {
   ];
 
   return (
-    <div className="relative z-10 flex flex-col items-center gap-8 py-10">
+    <div className="relative z-10 flex flex-col items-center gap-6 py-10">
       <p className="text-base text-zinc-400 tracking-wide uppercase">
         Powered by
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-12">
+      <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.name}
             aria-label={sponsor.name}
-            className="flex flex-col items-center gap-3 transform transition-all duration-300 hover:scale-105"
+            className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
           >
-            {/* Helo */}
             <img
               src={sponsor.logo}
               alt={sponsor.alt}
-              className="h-48 md:h-60 w-auto object-contain"
+              className="h-24 w-auto sm:h-32 md:h-40 lg:h-48 object-contain"
             />
-            <p className="text-xl font-bold text-red-400 tracking-wide">
-              {sponsor.name}
-            </p>
           </div>
         ))}
       </div>
