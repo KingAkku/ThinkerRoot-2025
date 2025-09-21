@@ -45,27 +45,31 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           thinkers, and creators to build impactful solutions.
         </p>
 
-        {/* Button */}
-        <div className="flex justify-center pt-4">
+        {/* Button with ₹50 below */}
+        <div className="flex flex-col items-center pt-4">
           <button
             onClick={onRegisterClick}
-            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-500/20"
+            className="bg-red-600 hover:bg-red-700 text-white font-bold py-5 px-12 
+                       rounded-lg text-xl md:text-2xl transition-all duration-300 
+                       transform hover:scale-105 shadow-lg shadow-red-500/20"
           >
-            Register Now (₹50)
+            Register Now
           </button>
+          <span className="mt-2 text-zinc-400 text-lg font-medium">₹50</span>
         </div>
 
         {/* Prize Pool Section */}
-        <div className="mt-10 max-w-4xl mx-auto">
+        <div className="mt-10 max-w-md mx-auto">
           <motion.h2
-            className="text-white text-xl font-semibold mb-4"
+            className="text-white text-xl font-semibold mb-4 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Live Prize Pool 
+            Live Prize Pool
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Stack the prize cards vertically */}
+          <div className="flex flex-col gap-4">
             <PrizeCard
               label="1st Prize"
               amount={firstPrize}
