@@ -13,7 +13,7 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
   const [paymentProof, setPaymentProof] = useState<File | null>(null);
   const [linkedinLink, setLinkedinLink] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!paymentProof || !linkedinLink) {
@@ -21,9 +21,35 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
       return;
     }
 
-    console.log('Form submitted');
-    onSuccess();
+    // Create FormData from the form element
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // explicitly set LinkedIn link + file (because of controlled state)
+    formData.set("linkedinLink", linkedinLink);
+    formData.append("paymentProof", paymentProof);
+
+    try {
+      // point this URL to your Express route
+      const res = await fetch("/api/applications", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.message || "Registration failed");
+      }
+
+      // success
+      onSuccess();
+      onClose();
+    } catch (err: any) {
+      console.error(err);
+      alert(err.message || "Something went wrong");
+    }
   };
+
 
   const inputClasses =
     "w-full bg-zinc-700 border border-zinc-600 rounded-md px-3 py-2 text-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors";
