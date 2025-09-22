@@ -21,16 +21,16 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
       return;
     }
 
-    // Create FormData from the form element
+  
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // explicitly set LinkedIn link + file (because of controlled state)
+   
     formData.set("linkedinLink", linkedinLink);
     formData.append("paymentProof", paymentProof);
 
     try {
-      // point this URL to your Express route
+      
       const res = await fetch("/api/applications", {
         method: "POST",
         body: formData,
@@ -41,7 +41,7 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
         throw new Error(errData.message || "Registration failed");
       }
 
-      // success
+     
       onSuccess();
       onClose();
     } catch (err: any) {
@@ -57,7 +57,7 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
   const legendClasses =
     "text-lg font-medium text-zinc-100 mb-2 w-full border-b border-zinc-700 pb-2";
 
-  // 🔗 LinkedIn description text
+ 
   const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬 𝐎𝐩𝐞𝐧
 
 📅 Date: 26th December 2025
@@ -103,7 +103,7 @@ We invite you to join us in shaping the future through innovation.
             Register Your Interest
           </h2>
 
-          {/* Buttons: Download + Share */}
+         
           <div className="mt-4 flex flex-col md:flex-row gap-4 justify-center">
             <a
               href="/poster.png"
@@ -126,7 +126,7 @@ We invite you to join us in shaping the future through innovation.
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8 p-8 pt-0">
-          {/* Personal Information */}
+         
           <fieldset>
             <legend className={legendClasses}>Personal Information</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -145,7 +145,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Contact Information */}
+       
           <fieldset>
             <legend className={legendClasses}>Contact Information</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -164,7 +164,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Professional Background */}
+          
           <fieldset>
             <legend className={legendClasses}>Professional Background</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -183,7 +183,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Innovation Preferences */}
+          
           <fieldset>
             <legend className={legendClasses}>Innovation Preferences</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -214,7 +214,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Skills & Motivation */}
+         
           <fieldset>
             <legend className={legendClasses}>Skills & Motivation</legend>
             <div className="space-y-4 mt-4">
@@ -245,7 +245,6 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Social Media Link */}
           <fieldset>
             <legend className={legendClasses}>Social Media Link *</legend>
             <div className="space-y-4 mt-4">
@@ -267,7 +266,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Payment Proof */}
+          
           <fieldset>
             <legend className={legendClasses}>Payment *</legend>
             <div className="mt-4 space-y-4">
