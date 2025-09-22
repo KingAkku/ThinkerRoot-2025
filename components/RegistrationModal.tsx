@@ -16,7 +16,6 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // ✅ check for uploads
     if (!paymentProof || !linkedinLink) {
       alert("Please upload all mandatory details");
       return;
@@ -31,6 +30,25 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
   const labelClasses = "block text-sm font-medium text-zinc-300 mb-1";
   const legendClasses =
     "text-lg font-medium text-zinc-100 mb-2 w-full border-b border-zinc-700 pb-2";
+
+  // 🔗 LinkedIn description text
+  const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬 𝐎𝐩𝐞𝐧
+
+📅 Date: 26th December 2025
+🔗 Register here: https://lnkd.in/gg39mZqb
+
+𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
+As the driving force behind this initiative, LenientTree is committed to fostering a culture of 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 and 𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 by providing a platform where:
+
+• Innovators can present transformative ideas
+• Participants can collaborate with peers and industry mentors
+• Teams can develop practical solutions with real-world impact
+
+This ideathon reflects 𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
+
+We invite you to join us in shaping the future through innovation.
+
+#𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 #𝐓𝐡𝐢𝐧𝐤𝐞𝐫𝐑𝐨𝐨𝐭 #𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧2025 #𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 #𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 #𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬𝐎𝐩𝐞𝐧`;
 
   return (
     <div
@@ -59,14 +77,26 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
             Register Your Interest
           </h2>
 
-          {/* LinkedIn Template Download Button */}
-          <a
-            href="/poster.png"
-            download
-            className="mt-4 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
-          >
-            📥 Download LinkedIn Post Template
-          </a>
+          {/* Buttons: Download + Share */}
+          <div className="mt-4 flex flex-col md:flex-row gap-4 justify-center">
+            <a
+              href="/poster.png"
+              download
+              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
+            >
+              📥 Download LinkedIn Post Template
+            </a>
+            <a
+              href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(
+                linkedinText
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
+            >
+              🔗 Share to LinkedIn
+            </a>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8 p-8 pt-0">
@@ -215,7 +245,6 @@ const RegistrationModal = ({ isOpen, onClose, onSuccess }: RegistrationModalProp
           <fieldset>
             <legend className={legendClasses}>Payment *</legend>
             <div className="mt-4 space-y-4">
-              {/* QR Code */}
               <div className="flex flex-col items-center space-y-2">
                 <img
                   src="/payment.jpeg"

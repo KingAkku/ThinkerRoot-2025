@@ -8,7 +8,7 @@ interface HeaderProps {
 const Header = ({ onRegisterClick }: HeaderProps) => {
   const [registrationCount, setRegistrationCount] = useState<number>(0);
 
-  // Fetch live registration count
+  // Fetch live registration count (still works for future scaling)
   useEffect(() => {
     const fetchCount = async () => {
       try {
@@ -24,10 +24,10 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  // Prize pools
-  const firstPrize = registrationCount * 15;
-  const secondPrize = registrationCount * 10;
-  const thirdPrize = registrationCount * 5;
+  // ✅ Fixed prize amounts for now
+  const firstPrize = 5000;
+  const secondPrize = 3000;
+  const thirdPrize = 1000;
 
   return (
     <header className="relative flex items-center justify-center text-center px-4 overflow-hidden min-h-screen pt-20 md:pt-32">
@@ -65,7 +65,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Live Prize Pool
+            Prize Pool
           </motion.h2>
 
           {/* Stack the prize cards vertically */}
@@ -132,7 +132,7 @@ const PrizeCard = ({
           transition={{ duration: 0.3 }}
           className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${colorFrom} ${colorTo} bg-clip-text text-transparent`}
         >
-          ₹{amount}
+          ₹{amount.toLocaleString('en-IN')}
         </motion.p>
       </AnimatePresence>
     </motion.div>
