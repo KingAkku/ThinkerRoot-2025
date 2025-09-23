@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface VolunteerModalProps {
   isOpen: boolean;
@@ -9,15 +9,49 @@ interface VolunteerModalProps {
 const VolunteerModal = ({ isOpen, onClose, onSuccess }: VolunteerModalProps) => {
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Volunteer Form submitted');
-    onSuccess();
-  };
+  // state for form fields
+  const [formData, setFormData] = useState({
+    name: '',
+    college: '',
+    linkedin: '',
+    phone: '',
+    email: ''
+  });
 
   const inputClasses =
     "w-full bg-zinc-700 border border-zinc-600 rounded-md px-3 py-2 text-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors";
   const labelClasses = "block text-sm font-medium text-zinc-300 mb-1";
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      // POST to backend
+      const res = await fetch('/api/campus-ambassadors', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || 'Failed to submit');
+      }
+
+      console.log('Volunteer form submitted');
+      onSuccess();
+      setFormData({ name: '', college: '', linkedin: '', phone: '', email: '' });
+      onClose();
+    } catch (err: any) {
+      alert(err.message);
+    }
+  };
 
   return (
     <div
@@ -43,7 +77,7 @@ const VolunteerModal = ({ isOpen, onClose, onSuccess }: VolunteerModalProps) => 
             id="modal-title"
             className="font-display text-2xl font-bold text-red-400 text-center"
           >
-            Apply to be a Volunteer
+            Apply to be a Volunteer  
           </h2>
         </div>
 
@@ -52,35 +86,75 @@ const VolunteerModal = ({ isOpen, onClose, onSuccess }: VolunteerModalProps) => 
             <label htmlFor="name" className={labelClasses}>
               Name *
             </label>
-            <input type="text" id="name" name="name" required className={inputClasses} />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className={inputClasses}
+            />
           </div>
 
           <div>
             <label htmlFor="college" className={labelClasses}>
               College/Organization *
             </label>
-            <input type="text" id="college" name="college" required className={inputClasses} />
+            <input
+              type="text"
+              id="college"
+              name="college"
+              required
+              value={formData.college}
+              onChange={handleChange}
+              className={inputClasses}
+            />
           </div>
 
           <div>
             <label htmlFor="linkedin" className={labelClasses}>
               LinkedIn Profile URL *
             </label>
-            <input type="url" id="linkedin" name="linkedin" required className={inputClasses} />
+            <input
+              type="url"
+              id="linkedin"
+              name="linkedin"
+              required
+              value={formData.linkedin}
+              onChange={handleChange}
+              className={inputClasses}
+            />
           </div>
 
           <div>
             <label htmlFor="phone" className={labelClasses}>
               Phone Number *
             </label>
-            <input type="tel" id="phone" name="phone" required className={inputClasses} />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+              className={inputClasses}
+            />
           </div>
 
           <div>
             <label htmlFor="email" className={labelClasses}>
               Email Address *
             </label>
-            <input type="email" id="email" name="email" required className={inputClasses} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className={inputClasses}
+            />
           </div>
 
           <button
