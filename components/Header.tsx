@@ -8,7 +8,7 @@ interface HeaderProps {
 const Header = ({ onRegisterClick }: HeaderProps) => {
   const [registrationCount, setRegistrationCount] = useState<number>(0);
 
-  // Fetch live registration count (still works for future scaling)
+  // Fetch live registration count
   useEffect(() => {
     const fetchCount = async () => {
       try {
@@ -24,18 +24,24 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Fixed prize amounts for now
+  // ✅ Fixed prize amounts
   const firstPrize = 5000;
   const secondPrize = 3000;
   const thirdPrize = 1000;
 
   return (
-    <header className="relative flex items-center justify-center text-center px-4 overflow-hidden min-h-screen pt-20 md:pt-32">
+    <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
       {/* Background Grid + Radial Glow */}
-      <div className="absolute inset-0 w-full h-full bg-zinc-900 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <div className="absolute inset-0 w-full h-full bg-zinc-900 
+        bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
+        linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
+        bg-[size:14px_24px] 
+        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+      </div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.25),_transparent_70%)]"></div>
 
-      <div className="relative z-10 space-y-10">
+      {/* Hero Section */}
+      <div className="relative z-10 space-y-10 flex-grow flex flex-col items-center justify-center">
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter animate-gradient-text bg-gradient-to-r from-red-500 via-red-400 to-orange-400 bg-clip-text text-transparent">
           ThinkerRoot Ideathon 2025
         </h1>
@@ -43,6 +49,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-zinc-300">
           A one of a kind hackathon designed to nurture core innovation. Empowering developers,
           thinkers, and creators to build impactful solutions.
+        </p>
+
+        {/* Live Registration Count */}
+        <p className="text-zinc-400 text-lg font-medium">
+          🔥 {registrationCount} teams registered so far
         </p>
 
         {/* Button with ₹50 below */}
