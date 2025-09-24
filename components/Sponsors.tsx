@@ -1,33 +1,37 @@
 import React from 'react';
 import Section from './Section';
-import { SPONSORS } from '../constants';
+import { motion } from 'framer-motion';
 
 const Sponsors = () => {
-    return (
-        <div className="border-b border-zinc-800">
-            <Section id="sponsors" title="Our Sponsors">
-                <div className="max-w-5xl mx-auto">
-                    <p className="text-center text-zinc-400 mb-12">
-                        This event is made possible by the generous support of our sponsors.
-                    </p>
-                    <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
-                        {SPONSORS.map((sponsor) => (
-                            <a 
-                                key={sponsor.name}
-                                href={sponsor.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110 p-2 border-2 border-transparent hover:border-zinc-600 rounded-xl"
-                                aria-label={`Visit sponsor: ${sponsor.name}`}
-                            >
-                               {sponsor.logo}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </Section>
+  return (
+    <div className="border-b border-zinc-800 relative overflow-hidden">
+      <Section id="sponsors" title="Our Sponsors">
+        <div className="max-w-6xl mx-auto text-center py-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-zinc-200"
+          >
+            Coming Soon
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-zinc-400 mt-4 text-lg max-w-2xl mx-auto"
+          >
+            Stay tuned — we’re lining up incredible sponsors for this event.
+          </motion.p>
         </div>
-    );
+      </Section>
+
+      {/* Subtle background effect */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-red-500/5 to-transparent blur-3xl" />
+    </div>
+  );
 };
 
 export default Sponsors;

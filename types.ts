@@ -20,5 +20,4 @@ export interface VisionPoint {
 export interface Sponsor {
     name: string;
     logo: React.ReactNode;
-    href: string;
 }

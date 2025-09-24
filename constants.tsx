@@ -81,10 +81,10 @@ export const VISION_POINTS: VisionPoint[] = [
 ];
 
 export const SPONSORS: Sponsor[] = [
-    { name: 'InnovateCorp', logo: <PlaceholderLogo text="InnovateCorp" />, href: '#' },
-    { name: 'FutureTech', logo: <PlaceholderLogo text="FutureTech" />, href: '#' },
-    { name: 'QuantumLeap', logo: <PlaceholderLogo text="QuantumLeap" />, href: '#' },
-    { name: 'BioGen', logo: <PlaceholderLogo text="BioGen" />, href: '#' },
-    { name: 'Sustain Solutions', logo: <PlaceholderLogo text="Sustain" />, href: '#' },
-    { name: 'Nexus Gaming', logo: <PlaceholderLogo text="Nexus Gaming" />, href: '#' },
+    { name: 'InnovateCorp', logo: <PlaceholderLogo text="InnovateCorp" /> },
+    { name: 'FutureTech', logo: <PlaceholderLogo text="FutureTech" /> },
+    { name: 'QuantumLeap', logo: <PlaceholderLogo text="QuantumLeap" /> },
+    { name: 'BioGen', logo: <PlaceholderLogo text="BioGen" /> },
+    { name: 'Sustain Solutions', logo: <PlaceholderLogo text="Sustain" /> },
+    { name: 'Nexus Gaming', logo: <PlaceholderLogo text="Nexus Gaming" /> },
 ];
