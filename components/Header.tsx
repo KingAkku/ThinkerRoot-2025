@@ -12,7 +12,8 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 	useEffect(() => {
 		const fetchCount = async () => {
 			try {
-				const apiUrl = process.env.VITE_API_URL;
+				const apiUrl =
+					process.env.VITE_API_URL || "https://thinker-root.onrender.com";
 				const res = await fetch(`${apiUrl}/api/registration-count`);
 				const data = await res.json();
 				setRegistrationCount(data.count || 0);
