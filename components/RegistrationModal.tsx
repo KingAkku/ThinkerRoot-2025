@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HACKATHON_THEMES } from "../constants";
+import { shareToLinkedIn } from "../utils/linkedinShare";
 
 interface RegistrationModalProps {
 	isOpen: boolean;
@@ -111,16 +112,17 @@ We invite you to join us in shaping the future through innovation.
 						>
 							📥 Download LinkedIn Post Template
 						</a>
-						<a
-							href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(
-								linkedinText
-							)}`}
-							target="_blank"
-							rel="noopener noreferrer"
+						<button
+							onClick={() =>
+								shareToLinkedIn(
+									"https://thinker-root-2025.vercel.app/",
+									linkedinText
+								)
+							}
 							className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
 						>
 							🔗 Share to LinkedIn
-						</a>
+						</button>
 					</div>
 				</div>
 
