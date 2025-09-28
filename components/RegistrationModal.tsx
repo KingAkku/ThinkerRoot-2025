@@ -21,7 +21,7 @@ const RegistrationModal = ({
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		const url = process.env.API_URL || "http://localhost:5000";
+		const url = process.env.VITE_API_URL || "http://13.60.67.45:5003/";
 
 		if (!paymentProof || !linkedinLink) {
 			alert("Please upload all mandatory details");
